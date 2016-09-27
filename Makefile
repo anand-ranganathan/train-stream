@@ -13,7 +13,6 @@
 
 .PHONY: e2e
 
-GAE_PROJECT=guestbook-143720
 
 VERSION=e2e-test
 
