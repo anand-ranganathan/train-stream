@@ -1,0 +1,50 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+# [START handlers]
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /bootstrap
+  static_dir: bootstrap
+
+- url: /schedules
+  script: schedules.app
+
+- url: /schedules_plus_uber
+  script: schedules_plus_uber.app
+
+- url: /schedules_plus_uber_login
+  script: schedules_plus_uber.app
+
+- url: /station_input
+  script: schedules.app
+
+- url: /address_input
+  script: uber_login.app
+
+- url: /uber_login
+  script: uber_login.app
+
+- url: /uber_logged_in
+  script: uber_login.app
+
+
+- url: /.*
+  script: guestbook.app
+# [END handlers]
+
+# [START libraries]
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
+- name: lxml
+  version: latest
+- name: ssl
+  version: 2.7.11
+# [END libraries]
